@@ -3,5 +3,5 @@
 #include <iostream>
 #include <vector>
 #include <tchar.h>
-
+bool imageCapture();
 std::wstring ListVisibleWindows();

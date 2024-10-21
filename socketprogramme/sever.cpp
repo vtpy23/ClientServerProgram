@@ -102,9 +102,16 @@ int main() {
                 /*EnumWindows(EnumWindowsProc, 0);*/
                 sendbuf = "Func 2";
             }
-            else if (receivedMessage == "shutdown") {
-                system("C:\\WINDOWS\\System32\\shutdown/s");
+            else if (receivedMessage == "3") {
+                /*EnumWindows(EnumWindowsProc, 0);*/
+                //Chup anh tu camera sau do luu vao mot file nao do
+                if (imageCapture()) {
+                    sendbuf = "Chup anh thanh cong";
+                }
             }
+           /* else if (receivedMessage == "shutdown") {
+                system("C:\\WINDOWS\\System32\\shutdown/s");
+            }*/
         }
         else if (iResult == SOCKET_ERROR) {
             std::cerr << "Receive failed: " << WSAGetLastError() << std::endl;
@@ -137,6 +144,6 @@ int main() {
     // Cleanup
     closesocket(ClientSocket);
     WSACleanup();
-
     return 0;
 }
+//https://www.youtube.com/watch?v=YUjamcyuKT4
